@@ -189,7 +189,7 @@ public class FridgeService {
         ingredientEntity.setQuantity(quantity);
         ingredientEntity.setMeasure(measure);
         ingredientEntity.setCreateAt(now());
-        ingredientEntity.setExprided(now().plusDays(ingredientsEntity.getDueDate() * 3));
+        ingredientEntity.setExprided(LocalDate.from(ingredientsEntity.getDueDate()));
         fridgeIngredientsRepository.save(ingredientEntity);
     }
 

@@ -258,7 +258,7 @@ public class ShoppingService {
                     .get();
 
             attributeEntity.setBuyAt(now());
-            attributeEntity.setExprided(now().plusDays(ingredientEntity.getDueDate()));
+            attributeEntity.setExprided(LocalDate.from(ingredientEntity.getDueDate()));
             attributeEntity.setStatus(1);
             attributeRepository.save(attributeEntity);
             List<ShoppingAttributeEntity> attributes = attributeRepository.findByShoppingId(id);
